@@ -1,0 +1,27 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Ionic Blank
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-refresher (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+  <ion-card *ngFor="let item of carddata">
+    <ion-item>
+      <ion-avatar item-left>
+        <img src="{{item.author.avatar_URL}}">
+        </ion-avatar>
+        <ion-card-title>{{item.author.nice_name}}</ion-card-title>
+        <p>{{item.author.URL}}</p>
+        </ion-item>
+        
+        <ion-card-content>
+          <h2>{{item.title}}</h2>
+          <div [innerHTML]= "'<p>' + item.content + '</p>'"></div>
+          </ion-card-content>
+          </ion-card>
+</ion-content>
